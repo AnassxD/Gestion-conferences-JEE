@@ -84,17 +84,17 @@ public class EventMB implements Serializable {
             this.event.setImagePath("https://www.goldshipdz.com/l-fr/imgs/no-image.jpg");
             Event savedEvent = eventService.saveEvent(this.event);
             if (savedEvent == null) {
-                return "admin?error=error+saving+event";
+                return "admin?error=error saving event";
             }
 
             eventService.attachOrganizerToEvent(savedEvent, organizer);
-            return "admin?success=event+saved";
-        } catch (Exception e) {
-            return "admin?error=" + e.getMessage();
+            return "admin?success=event saves";
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            return "admin?error=error saving event";
         }
     }
-
-
 
     public String edit(Event event) {
         Event updatedEvent = eventService.updateEvent(event); // Update the detached object

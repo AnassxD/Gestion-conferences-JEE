@@ -5,5 +5,7 @@ public enum EventType {
     WORKSHOP,
     FORMATION,
 
+    OTHER
+
 
 }

@@ -29,6 +29,7 @@ public class Event implements Serializable {
     @Column(nullable = true)
     private String mediaSupport;
 
+
     @Column(nullable = false)
     private Date startDate;
 
@@ -58,7 +59,7 @@ public class Event implements Serializable {
     public Event() {
     }
 
-    public Event(String title, String description, String location, String imagePath, String mediaSupport,  Date startDate, Date endDate, EventType type) {
+    public Event(String title, String description, String location, String imagePath, String mediaSupport, Date startDate, Date endDate, EventType type) {
         this.title = title;
         this.description = description;
         this.location = location;
@@ -130,6 +131,7 @@ public class Event implements Serializable {
     public void setMediaSupport(String mediaSupport) {
         this.mediaSupport = mediaSupport;
     }
+
 
 
 
