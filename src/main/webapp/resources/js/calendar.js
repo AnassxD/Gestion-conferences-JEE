@@ -70,7 +70,7 @@
             if (image) {
                 eventImage.innerHTML = `<img alt="${title}" src="${image}" class="w-100 h-px-250 object-fit-cover" />`;
             } else {
-                eventImage.innerHTML = `<img alt="${title}" src="https://www.goldshipdz.com/l-fr/imgs/no-image.jpg" class="w-100 h-px-250 object-fit-cover" />`;
+                eventImage.innerHTML = `<img alt="${title}" src="/resources/img/" class="w-100 h-px-250 object-fit-cover" />`;
             }
 
             // organizers details

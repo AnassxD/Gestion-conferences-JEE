@@ -13,7 +13,7 @@ import java.util.List;
 @Local
 public class UserService {
     EntityManagerFactory emf;
-    EntityManager em;
+    static EntityManager em;
 
     public UserService() {
         emf = Persistence.createEntityManagerFactory("EventPU");
@@ -80,4 +80,21 @@ public class UserService {
             query.setParameter("userId", user.getId());
             return query.getResultList();
     }
+
+
+
+    public static void deleteOrganisateur(Long userId) {
+        EntityTransaction et = em.getTransaction();
+        try {
+            et.begin();
+            User organizer = em.find(User.class, userId);
+            if (organizer != null) {
+                em.remove(organizer);
+            }
+            et.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+

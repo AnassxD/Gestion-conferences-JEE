@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/admin/components/add-event.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/admin/components" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/admin/components/organizers/add-organizer.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/admin/components/organizers" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
       </map>
     </option>

@@ -49,14 +49,14 @@
                         <h:form enctype="multipart/form-data">
                            <div class="mb-3">
                               <h:outputLabel for="title" value="Title"/>
-                              <h:inputText id="title" styleClass="form-control title_#{event.id}" value="#{event.title}" required="true"
+                              <h:inputText id="title" styleClass="form-control title_#{event.id}" value="#{event.title}" required="false"
                                            requiredMessage="Title is required"/>
                               <h:message for="title" showDetail="true" styleClass="error" />
                            </div>
 
                            <div class="mb-3">
                               <h:outputLabel for="location" value="Location"/>
-                              <h:inputText id="location" styleClass="form-control" value="#{event.location}" required="true"
+                              <h:inputText id="location" styleClass="form-control" value="#{event.location}" required="false"
                                            requiredMessage="Location is required"/>
                               <h:message for="title" showDetail="true" styleClass="error" />
                            </div>
@@ -70,7 +70,7 @@
 
                               <div class="col-6">
                                  <h:outputLabel for="type" value="Type"/>
-                                 <h:selectOneMenu id="type" styleClass="form-select" value="#{event.type}" required="true" requiredMessage="Type is required">
+                                 <h:selectOneMenu id="type" styleClass="form-select" value="#{event.type}" required="false" requiredMessage="Type is required">
                                     <f:selectItem itemLabel="Select Type..." itemValue="" />
                                     <f:selectItems value="#{['CONFERENCE','MEETING','SEMINAR','WORKSHOP','OTHER']}" var="eventType" itemLabel="#{eventType}" itemValue="#{eventType}"/>
                                  </h:selectOneMenu>
@@ -93,7 +93,7 @@
 
                               <div class="col-6">
                                  <h:outputLabel for="startDate" value="Start Date"/>
-                                 <h:inputText id="startDate" styleClass="form-control mx-1" value="#{event.startDate}" required="true"
+                                 <h:inputText id="startDate" styleClass="form-control mx-1" value="#{event.startDate}" required="false"
                                               requiredMessage="Start Date is required">
                                     <f:converter converterId="dateConverter" for="startDate"/>
                                  </h:inputText>
@@ -102,7 +102,7 @@
 
                               <div class="col-6">
                                  <h:outputLabel for="endDate" value="End Date"/>
-                                 <h:inputText id="endDate" styleClass="form-control mx-1" value="#{event.endDate}" required="true"
+                                 <h:inputText id="endDate" styleClass="form-control mx-1" value="#{event.endDate}" required="false"
                                               requiredMessage="End Date is required">
                                     <f:converter converterId="dateConverter" for="endDate"/>
                                  </h:inputText>
@@ -111,14 +111,10 @@
 
                            </div>
 
-                           <div class="mb-3">
-                              <h:outputLabel for="color" value="Color"/>
-                              <h:message for="color" showDetail="true" styleClass="error" />
-                           </div>
 
                            <div class="modal-footer">
                               <button type="button" class="btn" data-bs-dismiss="modal">cancel</button>
-                              <h:commandButton action="#{eventMB.edit(event)}" styleClass="btn btn-primary" value="Edit Event" />
+                              <h:commandButton action="#{eventMB.edit(event)}" styleClass="btn btn-danger" style="background-color: green;" value="Edit Event" />
                            </div>
 
                         </h:form>

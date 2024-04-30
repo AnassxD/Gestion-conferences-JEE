@@ -62,6 +62,8 @@ public class UserMB implements Serializable {
     {
         return userService.allParticipatedEvents(user);
     }
-
+    public String delete(Long id){
+        UserService.deleteOrganisateur(id);
+        return "/admin/organizers.xhtml?faces-redirect=true";    }
 
 }

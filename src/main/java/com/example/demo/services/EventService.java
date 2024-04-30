@@ -34,6 +34,18 @@ public class EventService {
             return null;
         }
     }
+//    public void attachOrganizerToEvent(Event event, Organizer organizer) {
+//        // Assurez-vous que l'événement et l'organisateur ne sont pas nuls
+//        if (event == null || organizer == null) {
+//            throw new IllegalArgumentException("L'événement et l'organisateur ne peuvent pas être nuls");
+//        }
+//
+//        // Associez l'organisateur à l'événement
+//        event.setOrganizer(organizer);
+//
+//        // Mettez à jour l'événement dans la base de données
+//        eventRepository.save(event);
+//    }
 
     public Event updateEvent(Event event) {
         EntityTransaction et = em.getTransaction();
@@ -151,6 +163,9 @@ public class EventService {
             e.printStackTrace();
         }
     }
+
+
+    
 
     public void removeEventFromParticipates(Long eventId, Long organizerId) {
         EntityTransaction et = em.getTransaction();
