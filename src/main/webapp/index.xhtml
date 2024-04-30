@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+    <ui:composition template="/WEB-INF/layouts/template.xhtml">
+    <ui:define name="content">
+        <div>
+            <div class="flex-container p-5 hero-bg position-relative align-items-center justify-content-center justify-content-md-between">
+                <div class="col-12 mt-5 zindex-2 col-md-8 mx-auto d-flex flex-column justify-content-center align-items-center text-center">
+                    <h1 class="text-7xl font-bold text-uppercase text-dark">Exploring Events.</h1>
+                    <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, iste.</p>
+                    <div class="d-flex gap-4 align-items-center justify-content-center flex-wrap w-100">
+                        <h:link value="Explore" styleClass="btn btn-secondary px-10 rounded-pill" outcome="/events/index" />
+                    </div>
+                </div>
+                <div class="bottom-gradient"></div>
+            </div>
+
+        </div>
+    </ui:define>
+</ui:composition>
+
+</h:body>
+</html>

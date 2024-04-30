@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsf/html">
+ <body>
+ <ui:composition>
+     <div class="container-fluid position-fixed top-0 start-0 d-flex justify-content-between align-items-center px-3 py-2 bg-primary text-white border-bottom shadow-sm">
+         <h1 class="h5 mb-0 font-weight-normal"><strong>Gestion</strong>Conferances</h1>
+
+         <div class="d-flex align-items-center justify-content-center gap-2 p-1">
+
+             <h:link styleClass="font-medium text-white" value="Events" outcome="/events/index" rendered="#{authMB.loggedUser != null}">
+                 <h:outputText value="" />
+             </h:link>
+             <h:link styleClass="font-medium text-white" value="Dashboard" outcome="/admin/index" rendered="#{authMB.isAdmin()}">
+                 <h:outputText value="" />
+             </h:link>
+             <h:link styleClass="font-medium text-white" value="Organizer Space" outcome="/organizer/index" rendered="#{authMB.isOrganizer()}">
+                 <h:outputText value="" />
+             </h:link>
+
+                 <h:link styleClass="btn btn-primary mt-2"  outcome="/auth/login" rendered="#{authMB.loggedUser == null}">
+                     <h:outputText value="Login" />
+                 </h:link>
+                 <h:link styleClass="btn btn-secondary mt-2"  outcome="/auth/register" rendered="#{authMB.loggedUser == null}">
+                     <h:outputText value="Register" />
+                 </h:link>
+
+
+
+             <h:inputText rendered="#{authMB.isAdmin()}" id="search" styleClass="form-control rounded-1 py-1" alt="Search" value="Search" />
+
+           <h:column rendered="#{authMB.loggedUser != null}">
+               <div class="dropdown">
+                   <a href="#" class="d-flex align-items-center link-dark text-decoration-none " id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/542px-Unknown_person.jpg" alt="" width="32" height="32" class="rounded-circle me-2" />
+                   </a>
+                   <ul class="dropdown-menu p-2 text-small shadow" aria-labelledby="dropdownUser2" style="">
+                       <li><p class="fw-medium dropdown-item border-bottom ">#{authMB.loggedUser.email}</p></li>
+
+                       <li><a class="dropdown-item mb-1" href="#">Profile</a></li>
+                       <h:form>
+                           <h:commandButton value="Logout" styleClass="btn border w-100" action="#{authMB.logout()}" />
+                       </h:form>
+                   </ul>
+               </div>
+           </h:column>
+       </div>
+
+   </div>
+
+ </ui:composition>
+ </body>
+</html>
